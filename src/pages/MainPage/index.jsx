@@ -13,7 +13,7 @@ function MainPage() {
       <Form>
         <Input type="text" placeholder="Digite o nome do usuário" 
          value={login} onChange={(e) => setLogin(e.target.value)} />
-        <Button> 
+        <Button to={`/users/${login}`}> 
           <MdSearch size={42} color="#fff" />
         </Button>
       </Form>
