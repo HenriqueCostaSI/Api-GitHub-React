@@ -33,6 +33,8 @@ export const theme = {
     gray700: "#424449",
     gray800: "#1D1E21",
     gray900: "#141518",
+    backgrond: "#191919",
+    container : "#2d2d2d",
     primary: "#F83600",
     secondary: "#FE8C00",
   },
@@ -53,6 +55,14 @@ export const theme = {
     "4xl": rem(40),
     "5xl": rem(64),
   },
+  breakpoints: {
+    xs: "0",
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    xxl: "1400px",
+  }
 };
 
 export function Theme({ children }) {
