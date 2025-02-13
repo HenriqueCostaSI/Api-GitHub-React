@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+
+import { Container, Sidebar, Main } from "./styles";
 
 function RepositoriesPage() {
   return (
-    <div>
-      <h1>RepositoriesPage</h1>
-    </div>
-  )
+    <Container>
+      <Sidebar>
+        <h1>Sidebar</h1>
+      </Sidebar>
+      <Main>
+        <h1>Main</h1>
+      </Main>
+    </Container>
+  );
 }
 
 export default RepositoriesPage;
