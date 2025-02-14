@@ -18,6 +18,7 @@ export const theme = {
     indigo: "#4263Eb",
     purple: "#7E5CEF",
     pink: "#FE5895",
+    
     gray100: "#FAFAFA",
     gray200: "#E9ECEF",
     gray300: "#DEE2E6",
@@ -27,6 +28,7 @@ export const theme = {
     gray700: "#424449",
     gray800: "#1D1E21",
     gray900: "#141518",
+    light: "ecf0f1",
     background: "#191919",
     container : "#2d2d2d",
     primary: "#F83600",
