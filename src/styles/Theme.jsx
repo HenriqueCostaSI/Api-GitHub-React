@@ -18,7 +18,7 @@ export const theme = {
     indigo: "#4263Eb",
     purple: "#7E5CEF",
     pink: "#FE5895",
-    
+    champagneDark: '#bdc3c7',
     gray100: "#FAFAFA",
     gray200: "#E9ECEF",
     gray300: "#DEE2E6",
@@ -45,7 +45,7 @@ export const theme = {
     md: '1rem',
     lg: '1.2rem',
     xl: '1.3rem',
-    xxl: '2rem',
+    xxl: '1.8rem',
     subtitle: '1.25rem',
 
   },

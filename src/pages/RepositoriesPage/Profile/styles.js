@@ -30,7 +30,7 @@ export const Avatar = styled.img`
 `;
 
 export const Login = styled.h1`
-  font-size: ${(props) => props.theme.fontSizes.lg};
+  font-size: ${(props) => props.theme.fontSizes.xxl};
 `;
 
 export const Name = styled.h2`
