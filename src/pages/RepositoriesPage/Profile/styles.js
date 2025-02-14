@@ -61,15 +61,3 @@ export const Data = styled.p`
 `;
 
 
-export const Clear = styled.button`
-  background: transparent;
-  border: none;
-  color: ${(props) => props.theme.colors.text};
-  text-align:center ;
-  
-  &:hover {
-    color:rgba(255, 255, 255, 0.5);
-  }
-
-  
-`;

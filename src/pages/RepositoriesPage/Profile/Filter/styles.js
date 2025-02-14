@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-export const container = styled.div`
+export const Container = styled.div`
     display: grid;
     grid-template-columns:auto;
     gap: 0.2rem;
     padding-right: 2rem;
+    
+    
 
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -28,12 +30,12 @@ export const Selector = styled.button`
     background: ${(props) => props.theme.colors.container};
     color: ${(props) => props.color || props.theme.colors.text};
     font-size: ${(props) => props.theme.fontSizes.small};
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+    
+    transition: background 0.8s, transform 0.5s;
 
     &:hover,
     .selected {
-        background: ${(props) =>props.color || props.theme.colors.hover};
+        background: ${(props) =>props.color || props.theme.colors.gray500};
         color: ${(props) => props.color ? props.theme.colors.text : props.theme.colors.black};
         transform: translateX(5px) scale(1.02);
     }
@@ -45,4 +47,22 @@ export const Selector = styled.button`
             transform: translateX(0) scale(1.02);
         }
     }
+`;
+
+export const Clear = styled.button`
+  background: transparent;
+  border: none;
+  color: ${(props) => props.theme.colors.text};
+  text-align: left ;
+  padding: 1rem;
+  
+  &:hover {
+    color:rgba(255, 255, 255, 0.5);
+  }
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
 `;
