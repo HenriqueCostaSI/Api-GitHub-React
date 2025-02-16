@@ -25,7 +25,7 @@ export const getLangsFrom = (repositories) => {
   .map((languages) => ({
     name: languages,
     count: stats[languages],
-    color: langColors[languages.toLowerCase()],
+    color: langColors[languages],
   }))
   .sort((a, b) => b.count - a.count);
 

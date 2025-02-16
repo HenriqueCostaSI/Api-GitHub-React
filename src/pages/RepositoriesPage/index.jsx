@@ -20,24 +20,28 @@ function RepositoriesPage() {
 
   const repositories = [
     {
+      id: "1",
       name: "Repo 1",
       description: "API do GitHub com React",
       html_url: "https://github.com/HenriqueCostaSI/api-github-react",
       language: "JavaScript",
     },
     {
+      id: "2",
       name: "Repo 2",
       description: "API do GitHub com React",
       html_url: "https://github.com/HenriqueCostaSI/api-github-react",
       language: "TypeScript",
     },
     {
+      id: "3",
       name: "Repo 3",
       description: "API do GitHub com React",
       html_url: "https://github.com/HenriqueCostaSI/api-github-react",
       language: "JavaScript",
     },
     {
+      id: "4",
       name: "Repo 3",
       description: "API do GitHub com React",
       html_url: "https://github.com/HenriqueCostaSI/api-github-react",
