@@ -4,6 +4,7 @@ import { Container, Sidebar, Main } from "./styles";
 import Profile from "./Profile";
 import Filter from "./Profile/Filter";
 import Repositories from "./Repositories";
+import { getLangsFrom } from "../../services/api";
 
 function RepositoriesPage() {
   const user = {
@@ -28,7 +29,7 @@ function RepositoriesPage() {
       name: "Repo 2",
       description: "API do GitHub com React",
       html_url: "https://github.com/HenriqueCostaSI/api-github-react",
-      language: "JavaScript",
+      language: "TypeScript",
     },
     {
       name: "Repo 3",
@@ -36,26 +37,17 @@ function RepositoriesPage() {
       html_url: "https://github.com/HenriqueCostaSI/api-github-react",
       language: "JavaScript",
     },
+    {
+      name: "Repo 3",
+      description: "API do GitHub com React",
+      html_url: "https://github.com/HenriqueCostaSI/api-github-react",
+      language: "C",
+    },
   ];
 
-  const stats = repositories
-    .map((repo) => repo.language)
-    .reduce((data, language) => ({
-      ...data,
-      [language]: (data[language] || 0) + 1,
-    }), []
-  );            
+  const languages = getLangsFrom(repositories);
 
-console.log(stats);
-
-  // calculo dos filtros
-  const languages = [
-    { name: "JavaScript", count: 3, color: "#f1e05a" },
-    { name: "TypeScript", count: 3, color: "#1d4e5c" },
-    { name: "HTML", count: 3, color: "#e34c26" },
-    { name: "CSS", count: 3, color: "#61389f" },
-    { name: "Python", count: 3, color: "#3572A5" },
-  ];
+  
   return (
     <Container>
       <Sidebar>
@@ -68,5 +60,4 @@ console.log(stats);
     </Container>
   );
 }
-
 export default RepositoriesPage;
