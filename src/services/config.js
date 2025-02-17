@@ -22,5 +22,6 @@ export const langColors = {
   Elixir: '#6e4a7e',
   Clojure: '#db5855',
   Haskell: '#5e5086',
-  Vue: '#2c3e50'
+  Vue: '#2c3e50',
+  Other: '#999999',
 };

@@ -5,7 +5,7 @@ import { langColors } from "../../../../services/config";
 
 function Repository({ repository }) {
 
-  const color = langColors[repository.language && repository.language.toLowerCase()];
+  const color = langColors[repository.language || "Other"];
 
   return(
     <Container color = {color}>
