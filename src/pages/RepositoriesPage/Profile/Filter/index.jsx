@@ -2,23 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Selector, Clear } from './styles';
 
-function Filter({ languages }) {
+function Filter({ languages, currentLanguage, onClick }) {
     
-    const selectors = languages.map((lang) => (
-        <Selector key={lang.name.toLocaleLowerCase()} 
-                color={lang.color}>
-            <span>{lang.name}</span>
-            <span>{lang.count}</span>
+    const selectors = languages.map(({ name, count, color}) => (
+        <Selector 
+            key={name.toLocaleLowerCase()}
+            color={color}
+            className={currentLanguage === name ? 'selected' : ''}
+            onClick={() =>onClick && onClick(name)}
+                 >
+            <span>{name}</span>
+            <span>{count}</span>
         </Selector>
     ));
   return (
     <Container>
         {selectors}
-        <Clear>Limpar</Clear>
+        <Clear onClick={() => onClick && onClick(undefined)}>Limpar</Clear>
     </Container>
   );
 }
 
+Filter.defaultProps = {
+    currentLanguage: null,
+    onClick: null,
+};
 Filter.propTypes = {
     languages: PropTypes.arrayOf(
         PropTypes.shape({
@@ -27,6 +35,8 @@ Filter.propTypes = {
         color: PropTypes.string.isRequired,
     }).isRequired
     ).isRequired,
+    currentLanguage: PropTypes.string,
+    onClick: PropTypes.func,
 };
 
 export default Filter;
