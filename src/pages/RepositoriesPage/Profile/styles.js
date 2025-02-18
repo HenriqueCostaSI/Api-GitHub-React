@@ -55,6 +55,16 @@ export const Data = styled.p`
   align-items: center;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.text};
+  text-decoration: none;
+
+  a {
+    color: ${(props) => props.theme.colors.text};
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover {
+      color:  ${(props) => props.theme.colors.primary};
+    }
+  }
 
   svg {
     margin-right: 10px;
