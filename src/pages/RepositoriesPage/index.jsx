@@ -17,6 +17,7 @@ function RepositoriesPage() {
         getUser("HenriqueCostaSI")
       ]);
       setUser(userResponse.data);
+      console.log(userResponse.data);
       setLoading(false);
     };
     loadData();
@@ -86,4 +87,6 @@ function RepositoriesPage() {
       </Main>
     </Container>
   );
-}export default RepositoriesPage;
+}
+
+export default RepositoriesPage;

@@ -6,13 +6,8 @@ const api = axios.create({
 });
 
 export const getUser = async (login) => {
-  try {
-    const response = await api.get(`/users/${login}`);
-    return response.data;
-  } catch (error) {
-    console.log("Erro na requisição: ", error);
-  }
-  return {};
+  const response = await api.get(`/users/${login}`);
+  return response;
 };
 
 export default api;
@@ -37,7 +32,7 @@ export const getLangsFrom = (repositories) => {
     count: stats[languages],
     color: langColors[languages],
   }))
-  .sort((a, b) => b.count - a.count);
+  .sort((a, b) => b.count - a.count);// ordernar por ordem decrescente
 
   return stats;
 }

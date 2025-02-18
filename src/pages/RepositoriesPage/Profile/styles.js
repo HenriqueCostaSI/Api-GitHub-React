@@ -54,6 +54,7 @@ export const Data = styled.p`
   display: flex;
   align-items: center;
   line-height: 1.5;
+  color: ${(props) => props.theme.colors.text};
 
   svg {
     margin-right: 10px;

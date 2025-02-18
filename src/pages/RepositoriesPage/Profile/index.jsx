@@ -28,10 +28,9 @@ function Profile({ user }) {
             <MdLocationCity size={20}/>{user.location}
           </Data>
         )}
-        {user.url && (
+        {user.html_url && (
           <Data>
-            <MdLink size={20}/>
-            <a href={`\\${user.url}`}>{user.url}</a>
+            <MdLink size={20}/> <a href={`\\${user.html_url}`}>{user.html_url}</a>
           </Data>
         )}
       </Inner>
@@ -46,7 +45,7 @@ Profile.propTypes = {
     name: PropTypes.string.isRequired,
     company: PropTypes.string,
     location: PropTypes.string,
-    url: PropTypes.string,
+    html_url: PropTypes.string,
     followers: PropTypes.number.isRequired,
     following: PropTypes.number.isRequired,
   }).isRequired,
