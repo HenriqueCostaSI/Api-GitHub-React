@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { Container, Sidebar, Main } from "./styles";
+import { Loading, Container, Sidebar, Main } from "./styles";
 import Profile from "./Profile";
 import Filter from "./Profile/Filter";
 import Repositories from "./Repositories";
-import { getLangsFrom } from "../../services/api";
+import { getLangsFrom, getUser } from "../../services/api";
 
 function RepositoriesPage() {
-
+  const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentLanguage, setCurrentLanguage] = useState();
 
-  const user = {
+  useEffect(() => {
+    const loadData = async () => {
+      const [userResponse] = await Promise.all([
+        getUser("HenriqueCostaSI")
+      ]);
+      setUser(userResponse.data);
+      setLoading(false);
+    };
+    loadData();
+  }, []);
+
+  /* const user = {
     login: "HenriqueCostaSI",
     avatar_url: "https://avatars.githubusercontent.com/u/51381410?v=4",
     url: "https://api.github.com/users/HenriqueCostaSI",
@@ -19,8 +31,9 @@ function RepositoriesPage() {
     location: "Uberlândia, Minas Gerais",
     followers: 0,
     following: 1,
-  };
+  }; */
 
+  // eslint-disable-next-line no-unused-vars
   const repositories = [
     {
       id: "1",
@@ -57,17 +70,20 @@ function RepositoriesPage() {
   const onFilterClick = (language) => {
     setCurrentLanguage(language);
   };
+
+  if (loading) {
+    return <Loading>Carregando...</Loading>;
+  }
   
   return (
     <Container>
       <Sidebar>
         <Profile user={user} />
-        <Filter languages={languages}  currentLanguage={currentLanguage} onClick={onFilterClick} /> 
+        <Filter languages={languages} currentLanguage={currentLanguage} onClick={onFilterClick} /> 
       </Sidebar>
       <Main>
         <Repositories repositories={repositories} currentLanguage={currentLanguage} />
       </Main>
     </Container>
   );
-}
-export default RepositoriesPage;
+}export default RepositoriesPage;
