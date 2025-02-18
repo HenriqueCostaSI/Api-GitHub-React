@@ -6,9 +6,19 @@ const api = axios.create({
 });
 
 export const getUser = async (login) => {
-  const response = await api.get(`/users/${login}`);
-  return response;
+  
+    const response = await api.get(`/users/${login}`);
+    return response.data;
+  
 };
+export const getRepos = async (login) => {
+  
+    const response = await api.get(`/users/${login}/repos`);
+    return response.data;
+ 
+};
+
+
 
 export default api;
 
