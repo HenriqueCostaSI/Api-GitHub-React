@@ -5,18 +5,19 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-export const getUser = async (login) => {
-  
-    const response = await api.get(`/users/${login}`);
-    return response.data;
-  
+export async function getUser(login) {
+  const response = await api.get(`/users/${login}`);
+  console.log(response.data);
+  console.log(response.data.name);
+  return response;
 };
-export const getRepos = async (login) => {
-  
-    const response = await api.get(`/users/${login}/repos`);
-    return response.data;
- 
-};
+export async function getRepos(login) {
+
+  const response = await api.get(`/users/${login}/repos`);
+  console.log(response);
+  return response;
+
+}
 
 
 
